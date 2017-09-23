@@ -6,21 +6,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>S dance</title>
+	<title>S* dance</title>
 
 	<!-- BOOTSTRAP CSS -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-   <link rel="stylesheet" href="../css/style.css">
-    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/contact.css">
+	<link rel="stylesheet" href="../css/general.css">
 </head>
-    
-    
-<body>
+<body class="body">
     
     <!-- MENU PRINCIPAL -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="#">S Dance</a>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#">S* Dance</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,10 +28,22 @@
                     <a class="nav-link" href="index.html">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="horaire.html"> Horaires </a>
+                    <a class="nav-link" href="horaire.html"> Horaires</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link professeurs" href="professeurs.html">Professeurs</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link contact" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link agenda" href="agenda.html">Agenda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link galerie" href="galerie.html">Photos/vidéos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link event" href="event.html">Mariage/anniversaire/autre</a>
                 </li>
             </ul>
         </div>
@@ -42,32 +52,18 @@
     
     <!-- CONTACT -->
     
-    <div class="contact-section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Vous pouvez nous contactez en remplissant ce formulaire.</p>
-            <div>
-                <div class="col-md-8 col-md-offset-2">
-                    <form class="form-horizontal" action="">
-                        <div class="form-group">
-                            <label for="exampleInputName2">Name</label>
-                            <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail2">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-                        </div>
-                        <div class="form-group ">
-                            <label for="exampleInputText">Your Message</label>
-                            <textarea  class="form-control" placeholder="Description"></textarea> 
-                        </div>
-                        <button type="submit" class="btn btn-default black-background white">Send Message</button>
-                    </form>
-                </div>
-            </div>
+    <div class="contactContainer">
+        <h2>Formulaire de contact</h2>
+        <p>Vous pouvez me contacter via ce formulaire</p>
+        <div>
+            <form action="">
+                <input type="text" placeholder="Nom">
+                <input type="text" placeholder="E-mail">
+                <textarea name="Message" id="" cols="30" rows="10" placeholder="Message" class="textareaMessage"></textarea>
+                <button type="submit" class="boutonSubmit">Valider</button>
+            </form>
         </div>
     </div>
 	
 </body>
-    
 </html>
