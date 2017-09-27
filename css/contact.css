@@ -27,10 +27,9 @@
     background: transparent;
     border-color: white;
     margin-bottom: 2%;
-    
-    
 }
 
-.boutonSubmit{
-    border-radius: 15px;
+.btnSubmit{
+    background-color: rgba(52,58,64,1);
+    margin-bottom: 1%;
 }
