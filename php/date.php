@@ -4,6 +4,21 @@ class Date{
 	var $days = array('lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche');
 	var $months = array('Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre');
 
+
+	function getEvents($year){
+		global $DB;
+		$req = $DB->query('SELECT id,title,date FROM events WHERE YEAR(date)='.$year);
+		$r = array();
+
+		/**
+		* CE QUE JE VEUX $r[TIMESTAMP][id] = title
+		*/
+		while($d = $req->fetch(PDO::FETCH_OBJ)){
+			$r[strtotime($d->date)][$d->id] = $d->title;
+		}
+		return $r;
+	}
+
 	function getAll($year){
 		$r = array();
 

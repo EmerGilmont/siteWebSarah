@@ -90,9 +90,11 @@
         <!-- PHP -->
 
         <?php
+            require('../php/config.php');
             require('../php/date.php');
             $date = new Date();
             $year = date('Y');
+            $events = $date->getEvents($year);
             $dates = $date->getAll($year);
         ?>
 
@@ -113,7 +115,7 @@
             <div class="clear"></div>
             <?php $dates = current($dates);?>
             <?php foreach ($dates as $m=>$days): ?>
-                <div class="month" id="month<?php echo $m; ?>">
+                <div class="month relative" id="month<?php echo $m; ?>">
                     <table>
                         <thead>
                             <tr>
@@ -126,16 +128,26 @@
                         <tbody>
                             <tr>
                                 <?php $end = end($days); foreach ($days as $d=>$w): ?>
+                                    <?php $time = strtotime("$year-$m-$d"); ?>
                                     <?php if(($d == 1)&&($w != 1)): ?>
                                         <td colspan="<?php echo $w-1; ?>" class="padding"></td>
                                     <?php endif; ?>
 
-                                    <td>
+                                    <td<?php if($time == strtotime(date('Y-m-d'))): ?> class="today" <?php endif; ?> >
                                         <div class="relative">
                                             <div class="day">
                                                 <?php echo $d; ?>
                                             </div>
                                         </div>
+                                        <div class="daytitle">
+                                            <?php echo $d; ?>
+                                            <?php echo $date->months[$m-1]; ?>
+                                        </div>
+                                        <ul class="events">
+                                            <?php if(isset($events[$time])): foreach ($events[$time] as $e): ?>
+                                                <li><?php echo $e ?></li>
+                                            <?php endforeach; endif; ?>
+                                        </ul>
                                     </td>
                                     <?php if($w == 7): ?>
                                     </tr><tr>
@@ -148,8 +160,8 @@
                         </tbody>
                     </table>
                 </div>
+            <div class="clear"></div>
             <?php endforeach; ?>
         </div>
-
     </body>
 </html>
